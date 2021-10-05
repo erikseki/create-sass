@@ -1,22 +1,70 @@
-body {
-  background-color: #7159c1;
-  color: orange;
+/**$text-color:orange;
+    @mixin box-shadow($color) {
+        box-shadow: 3px 3px 4px 1px $color
+    }
+    
+    @mixin text-effect($val) {
+        @if $val==danger {
+            color: red;
+        }
+        @else if$val==alert {
+            color: yellow;
+        }
+        @else {
+            color: black;
+        }
+    }
+    
+    body {
+        background-color: #7159c1;
+        color: $text-color;
+    }
+    
+    .container {
+        @include box-shadow(rgba(0, 0, 0, 0.6));
+        width: 200px;
+        height: 200px;
+        background-color: white;
+        $text-color2: blue;
+        p {
+            color: $text-color2;
+            background-color: gray;
+            height: 100px;
+            width: 100px;
+            @include box-shadow(rgba(0, 0, 0, 0.6));
+            @include text-effect(none);
+        }
+    }
+    ---------------------------------------**/
+.text-1 {
+  font-size: 15px;
 }
 
-.container {
-  -webkit-box-shadow: 3px 3px 4px 1px rgba(0, 0, 0, 0.6);
-          box-shadow: 3px 3px 4px 1px rgba(0, 0, 0, 0.6);
-  width: 200px;
-  height: 200px;
-  background-color: white;
+.text-2 {
+  font-size: 30px;
 }
 
-.container p {
-  color: blue;
-  background-color: red;
-  height: 100px;
-  width: 100px;
-  -webkit-box-shadow: 3px 3px 4px 1px rgba(0, 0, 0, 0.6);
-          box-shadow: 3px 3px 4px 1px rgba(0, 0, 0, 0.6);
+.text-3 {
+  font-size: 45px;
+}
+
+.text-4 {
+  font-size: 60px;
+}
+
+.text-5 {
+  font-size: 75px;
+}
+
+.blue-text {
+  color: white;
+}
+
+.red-text {
+  color: white;
+}
+
+.yellow-text {
+  color: white;
 }
 /*# sourceMappingURL=main.css.map */

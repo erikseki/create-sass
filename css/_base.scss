@@ -1,24 +1,56 @@
-$text-color:orange;
-@mixin box-shadow($color) {
-    box-shadow: 3px 3px 4px 1px $color
-}
-
-body {
-    background-color: #7159c1;
-    color: $text-color;
-}
-
-.container {
-    @include box-shadow(rgba(0, 0, 0, 0.6));
-    width: 200px;
-    height: 200px;
-    background-color: white;
-    $text-color2: blue;
-    p {
-        color: $text-color2;
-        background-color: red;
-        height: 100px;
-        width: 100px;
-        @include box-shadow(rgba(0, 0, 0, 0.6));
+/**$text-color:orange;
+    @mixin box-shadow($color) {
+        box-shadow: 3px 3px 4px 1px $color
     }
+    
+    @mixin text-effect($val) {
+        @if $val==danger {
+            color: red;
+        }
+        @else if$val==alert {
+            color: yellow;
+        }
+        @else {
+            color: black;
+        }
+    }
+    
+    body {
+        background-color: #7159c1;
+        color: $text-color;
+    }
+    
+    .container {
+        @include box-shadow(rgba(0, 0, 0, 0.6));
+        width: 200px;
+        height: 200px;
+        background-color: white;
+        $text-color2: blue;
+        p {
+            color: $text-color2;
+            background-color: gray;
+            height: 100px;
+            width: 100px;
+            @include box-shadow(rgba(0, 0, 0, 0.6));
+            @include text-effect(none);
+        }
+    }
+    ---------------------------------------**/
+
+@for $i from 1 through 5 {
+    .text-#{$i} {
+        font-size: 15px *$i;
+    }
+}
+
+//array 
+$colors: (color1: blue, color2: red, color3: yellow);
+@each $key,
+$color in $colors {
+    .#{$color}-text {
+        color: lighten($color, 50);
+    }
+}
+
+
 }
