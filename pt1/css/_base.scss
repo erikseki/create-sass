@@ -35,11 +35,11 @@
             @include text-effect(none);
         }
     }
-    ---------------------------------------**/
+    ---------------------------------------
 
 @for $i from 1 through 5 {
     .text-#{$i} {
-        font-size: 15px *$i;
+        font-size: 30px ;
     }
 }
 
@@ -48,9 +48,33 @@ $colors: (color1: blue, color2: red, color3: yellow);
 @each $key,
 $color in $colors {
     .#{$color}-text {
-        color: lighten($color, 50);
+        color: lighten($color, 10);
     }
 }
 
 
+.flex {
+    display : flex;
+    align-items: center;
+    justify-content: center;
 }
+
+body {
+    @extend .flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: initial;
+
+}
+
+p {
+    color: red;
+
+    &:hover {
+        color: blue;
+    }
+}**/
+
+
+  
+
